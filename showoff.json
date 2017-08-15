@@ -1,0 +1,57 @@
+{
+  "name": "Python Training",
+  "description": "The material for the Python Training",
+  "favicon": "../_images/clientdb.ico",
+  "author": "张泽亮",
+  "highlight": "solarized_dark",
+  "sections": [
+    {
+      "section": [
+        "Python介绍/01_python.md",
+        "Python介绍/02_author.md",
+        "Python介绍/03_whyPython.md",
+        "Python介绍/04_trend.md"
+      ]
+    },
+    {
+      "section": [
+        "安装Python/01_version.md",
+        "安装Python/02_pythonInstall.md",
+        "安装Python/03_pyenv.md",
+        "安装Python/04_pip.md",
+        "安装Python/05_virtualenv.md"
+      ]
+    },
+    {
+      "section": "进入Pythob"
+    },
+    {
+      "section": [
+        "基本数据类型/00_varaibles.md",
+        "基本数据类型/01_number.md",
+        "基本数据类型/02_string.md"
+      ]
+    },
+    {
+      "section": "集合类型"
+    },
+    {
+      "section": "逻辑控制"
+    },
+    {
+      "section": "函数"
+    },
+    {
+      "section": "模块"
+    },
+    {
+      "section": "面向对象"
+    },
+    {
+      "section": "文件操作"
+    },
+    {
+      "section": "Python常用模块介绍"
+    }
+  ]
+}
