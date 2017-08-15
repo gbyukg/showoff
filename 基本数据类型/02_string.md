@@ -187,4 +187,236 @@
 
 <!SLIDE transition=turnUp>
 
-# 字符串操作
+# 字符串方法
+
+字符串中包含了大量的方法, 熟悉这些方法将有助于我们操作字符串.
+
+`dir(str)` 可以让我们获取到字符串对象中的所有属性和方法.  
+`help(str)` 查看字符串类中各个函数的帮助文档.
+
+
+| 方法 | 说明 |
+| -- | -- |
+| `s.capitalize()` | 返回一个 `s` 的拷贝字符串对象, 其首字母为大写 |
+| `s.center(width[, char])` | 返回一个 `s` 的拷贝字符串, 原字符串居中, 并使用 `char` (默认空格)填充至长度 `width` |
+| `s.zfill(w)` | 返回一个 `s` 的拷贝字符串对象, 如果字符串长度小于 `w`, 则在字符串前用 `0` 将其填充至长度 `w` |
+| `s.ljust(width[, char])` | 返回一个 `s` 的拷贝字符串对象, 如果字符串长度小于 `width`, 则在字符串后面用字符 `char`(默认空格) 将其填充至长度 `width` |
+| `s.rjust(width[, char])` |  返回一个 `s` 的拷贝字符串对象, 如果字符串长度小于 `width`, 则在字符串前面用字符 `char`(默认空格) 将其填充至长度 `width`  |
+| `s.startswith(x[, start[, end]])` | 如果字符串 `s` 以 `x` 开始(或在 `start:end` 区间, 如果指定这2个参数), 则返回 `True` | 
+| `s.endswith(x[, start[, end]])` | 如果字符串 `s` 以 `x` 结尾(或在 `start:end` 区间, 如果指定这2个参数), 则返回 `True` | 
+| `s.find(t[, start[, end]])` | 按照从左至又的顺序在字符串 `s` 中搜索 `t`(或在 `start:end` 区间, 如果指定这2个参数), 返回找到的第一个字符串的索引位置, 或者返回 `-1` 如果没找到. |
+| `s.rfind(t[, start[, end]])` | 与 `find` 类似, 只是从最字符串的最右侧开始查找 |
+| `s.index(t[, start[, end]])` | 与 `find` 功能类似, 只是如果没有找到 `t`, 该函数将抛出 `ValueError` 异常 |
+| `s.rindex(t[, start[, end]])` | 与 `rfind` 功能类似, 只是如果没找找到 `t` , 该函数将抛出 `ValueError` 异常 |
+| `s.count(t[, start[, end]])` | 返回字符 `t` 在字符串 `s` 中出现的次数, 并且搜索范围在 `start:end` 之间, 如果指定了这2个参数. |
+| `s.isalnum()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是数字或字母, 否则返回 `False` |
+| `s.isalpha()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是字母, 否则返回 `False` |
+| `s.isidentifier()` | 返回 `True` 如果字符串 `s` 不为空, 并且 `s` 可以做为一个合法的标识符, 否则返回 `False` |
+| `s.isspace()` | 返回 `True` 如果字符串 `s` 是由空白字符组成, 否则返回 `False` |
+| `s.isdecimal()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是十进制的 unicode 数字字符, 否则返回 `False` |
+| `s.isdigit()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是 ASCILL 的数值, 否则返回 `False` |
+| `s.isnumeric()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是 Unicode 编码的数值, 否则返回 `False` |
+| `s.islower()` | 返回 `True` 如果字符串 `s` 中至少包含一个有大小写规则字符, 并且所有有大小写规则的字符全部为小写, 否则返回 `False` |
+| `s.isupper()` | 返回 `True` 如果字符串 `s` 中至少包含一个有大小写规则字符, 并且所有有大小写规则的字符全部为大写, 否则返回 `False` |
+| `s.lower()` | 返回字符串的小写形式 |
+| `s.upper()` | 返回字符串的小写形式 |
+| `s.swapcase()` | 将字符串中的小写字母转换成大写, 大写字母转换成小写 | 
+| `s.format(...)` | 格式化 |
+| `s.join(seq)` | 将序列 `seq` 里的所有元素都拼接到一起, 并在每个字符串的拼接处添加 `s` |
+| `s.replace(t, u[, n])` | 将字符串中出现的所有字符 `t` 替换成字符 `u`, 最多替换 `n` 次, 如果指定了 `n` 参数, 否则全部替换 | 
+| `s.split(t[, n])` | 将字符串按照字符 `t` 作为分割点切分字符串, 返回一个列表, 最多切割 `n` 次, 如果指定了 `n` 参数 |
+| `s.rsplit(t[, n])` | 与 `split()` 类似, 但是从右侧开始切割 |
+| `s.splitlines(f)` | 以换行符为切割点切割字符串 |
+| `s.lstrip(chars)` | 将字符串左边的空格去掉并返回 |
+| `s.rstrip(chars)` | 将字符串右边的空格去掉并返回 |
+| `s.strip(chars)` | 将字符串两边的空格去掉并返回 |
+
+.callout.info 由于字符串是非可变类型, 以上所有涉及修改字符串的函数都将返回一个新的字符串对象.
+
+<!SLIDE transition=turnUp>
+# 字符串方法示例
+
+    @@@ python
+    ' '.join(('s1', 's2', 's3'))
+    # 's1 s2 s3'
+
+    record = "Leo Tolstory*182808028*1910-11-20"
+    record.find('Tolstory')
+    # 4
+    record.find('Tolstory', 0, 10)
+    # -1
+    record.find('Tolstory', 0, 15)
+    # 4
+    record.find('Tolstory', 0, -1)
+    # 4
+
+    record.replace('Leo', 'Zzl')
+    # 'Zzl Tolstory*182808028*1910-11-20'
+
+    fields = record.split("*")
+    fields
+    # ['Leo Tolstory', '1828-8-28', '1910-11-20']
+
+    born = fields[1].split("-")
+    born
+    # ['1828', '8', '28']
+
+<!SLIDE transition=turnUp>
+
+# `format()` 方法
+
+format() 方法将字符串中出现的 `{}` 替换成递给他的参数, 以此来返回一个新的字符串对象.
+
+基本用法
+
+    @@@ python
+    '{} {}'.format('one', 'two')
+    # 'one two'
+    '{} {}'.format(1, 2)
+    # '1 2'
+
+    # 数字
+    '{:d}'.format(42)
+    # '42'
+
+    # 字符串
+    '{:s} {:d}'.format('one', 2)
+    # one 2
+
+    # 浮点数
+    '{:f}'.format(3.141592653589793)
+    # '3.141593'
+
+    # 使用 {{ 输出 一个 {, }} 输出一个 }
+    "{{{0}}} {1} ;-}}".format("I'm in braces", "I'm not")
+    # "{I'm in braces} I'm not ;-}"
+
+    # 带符号数字
+    '{:+d}'.format(42)
+    # '+42'
+    '{:+d}'.format(42)
+    # '-42'
+
+位置参数
+
+    @@@ python
+    '{0} {1} {0}'.format('one', 'two')
+    # 'one two one'
+
+    # 同时指定类型
+    '{0:s} {1:s} {0:s} {2:d}'.format('one', 'two', 3)
+    # 'one two one 3'
+
+字段名
+
+    @@@ python
+    '{who} turned {age} this year'.format(who='She', age=88)
+    # 'She turned 88 this year'
+
+    'The {who} was {0} last week'.format(12, who='boy')
+    # 'The boy was 12 last week'
+
+    # 使用索引
+    data = [4, 8, 15, 16, 23, 42]
+    '{d[4]} {d[5]}'.format(d=data)
+    # '23 42'
+
+    # 使用键值
+    person = {'first': 'Jean-Luc', 'last': 'Picard'}
+    '{p[first]} {p[last]}'.format(p=person)
+    # 'Jean-Luc Picard'
+
+    # 名称占位符
+    data = {'first': 'Hodor', 'last': 'Hodor!'}
+    '{first} {last}'.format(**data)
+    # 'Hodor Hodor!'
+    '{first} {last}'.format(first='Hodor', last='Hodor!')
+    # 'Hodor Hodor!'
+
+    # 使用对象的属性
+    import math
+    'math.pi = {0.pi}'.format(math)
+
+    element = 'Silver'
+    number = 47
+    "Element {number} is {element}".format(**locals())
+    'Element 47 is Silver'
+
+填充
+
+    @@@ python
+    # 左填充
+    '{:>10}'.format('test')
+    # '      test'
+
+    # 右填充
+    '{:10}'.format('test')
+    '{:<10}'.format('test')
+    # 'test      '
+
+    # 指定填充字符
+    '{:_>10}'.format('test')
+    '______test'
+    '{:*<10}'.format('test')
+    # 'test******'
+
+    # 居中
+    '{:^10}'.format('test')
+    # '   test   '
+
+    # 对于填充字符不能正好平均分布到字符串两边的情况, 多出的那个字符将填充在右边
+    '{:^6}'.format('zip')
+    # ' zip  '
+
+    # 填充数字
+    '{:4d}'.format(42)
+    # '  42'
+
+    '{:04d}'.format(42)
+    # '0042'
+
+    # 指定填充字符串
+    '{:*>10d}'.format(3)
+    # '*********3'
+
+截取
+
+    @@@ python
+    '{:.5}'.format('xylophone')
+    # 'xylop'
+
+    # 截取+填充
+    '{:10.5}'.format('xylophone')
+    # 'xylop     '
+
+    # 使用四舍五入的方式截取小数位数
+    '{:.9f}'.format(3.141592653589793)
+    '3.141592654'
+
+    '{:06.2f}'.format(3.141592653589793)
+    # '003.14'
+
+日期时间
+
+    @@@ python
+    from datetime import datetime
+    '{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
+    # '2001-02-03 04:05'
+
+参数形式格式化
+
+    @@@ python
+    '{:{align}{width}}'.format('test', align='^', width='10')
+    # '   test   '
+    '{:.{prec}} = {:.{prec}f}'.format('Gibberish', 2.7182, prec=3)
+    # 'Gib = 2.718'
+
+    '{:.{prec}} = {:.{prec}f}'.format('Gibberish', 2.7182, prec=3)
+    'Gib = 2.718'
+
+    '{:{width}.{prec}f}'.format(2.7182, width=5, prec=2)
+    # ' 2.72'
+    
+    '{:{prec}} = {:{prec}}'.format('Gibberish', 2.7182, prec='.3')
+    # 'Gib = 2.72'
+
