@@ -1,0 +1,41 @@
+.bullets > ul > li {
+  text-align: left;
+  padding: 25px;
+}
+
+.results {
+  background-color:#002200;
+  color:#00AA00;
+  border:2px solid black;
+  position: fixed;
+  top:0px;
+  width:100%;
+  padding:15px;
+  margin:0px;
+  z-index: 2147483647; /* max, see http://www.puidokas.com/max-z-index/ */
+  overflow: scroll;
+  max-height: 650px;
+}
+
+#preso,
+.slide {
+    background: #fff;
+    width: 1024px;
+    height: 768px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+blockquote {
+  margin: 2em;
+  padding-left: 15px;
+  color: #999;
+  font-size: 23px;
+  font-style: italic;
+  border-left: 4px solid #ddd;
+}
