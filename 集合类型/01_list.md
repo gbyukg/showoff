@@ -125,3 +125,13 @@ L1 与 L2 引用同一个列表对象, 通过任何一个变量对这个列表�
 使用切片形式, 将会创建一个新的一模一样的列表对象.
 
 ![list_reference.png.png](../_images/collectiontype/list_reference_copy.png.png)
+
+<!SLIDE transition=turnUp>
+# 列表推导式
+
+列表推导式是另一种可以快速生成列表的方式, 其语法简洁易懂.
+
+列表推导式支持两种格式:
+
+- `[expression for item in iterable]`
+- `[expression for item in iterable if condition]`
