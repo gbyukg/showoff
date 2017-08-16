@@ -58,6 +58,12 @@
 
 .callout.warning 字符串对象与数字对象一样, 属于不可变类型, 当使用 `+` 拼接多个字符串时, 每遇到一个 `+` 都将生成一个新的字符串对象, 效率低下.
 
+对字符串做 `*` 操作
+
+    @@@ python execute
+    a = '='
+    print(a * 10)
+
 <!SLIDE transition=turnUp>
 # Python2 与 Python3 中的字符串
 
@@ -122,11 +128,20 @@
 ![string_com1.png](../_images/datatype/string_com1.png)
 ![string_com2.png](../_images/datatype/string_com2.png)
 
+Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个字符串是否存在指定的字符串中.
+
+    @@@ python execute
+    print('ing' in 'string')
+    print('others' in 'string')
+    print('others' not in 'string')
+
 <!SLIDE transition=turnUp>
 
 # 字符串索引
 
 在 Python 中, 我们可以通过下标索引的方式访问字符串中的某个或某一段子字符串(称之为: 切片), 格式为: `s[N]`, 其中 `N` 为字符索引位置, 其取值范围 `0 <= N < len(s)` 或 `-1 <= N <= -(len(s))`.
+
+.callout.info `len() 为Python的内置函数, 可用来获取字符串的长度`
 
 ![string_com2.png](../_images/datatype/string_index.png)
 

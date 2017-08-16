@@ -62,6 +62,11 @@
     @@@ python
     python_versions = [3, 36, 1]
 
+同时赋值多个变量
+
+    @@@ python
+    val1, val2, val3 = 1, 'str1', 'zzl'
+
 `del` 删除变量
 
     @@@ python
