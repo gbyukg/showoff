@@ -75,14 +75,6 @@ Python一共提供了五种内置的序列类型: `str`, `tuple`, `list`, `bytes
     t = ('a',)  # 结尾逗号不能少
     print(t)
 
-Python2 中的 `range()`
-
-    @@@ python execute
-    i = range(1, 10)
-    print(i)
-
-.callout.info Python2 中存在另一个内置函数 `xrang()`, 该函数效果与 `rang()`, 不同之处在于 `range()` 返回一个列表, 而 `xrang()` 返回一个可迭代对象, 如果生成的列表中包含了大量元素, 这些元素将全部被保存到内存中. 而可迭代对象只会将当前处理的元素保存在内存中, 因此使用 `xrang()` 会被 `range()` 更节省内存空间
-
 .callout.info Python3 中移除了 `xrang()`, 而 `rang()` 被修改成了返回一个可迭代对象, 而在不是一个元组了.
 
 <!SLIDE transition=turnUp>
