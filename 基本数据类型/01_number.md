@@ -197,6 +197,13 @@ bool 的特殊作用
     ['val1', 'val2'][1 > 2]  # 'val1'
 
 <!SLIDE center subsection>
+# Python 中的判断语句
+
+>, >=, <, <=, ==, !=, is, is not
+
+is 判断的是对象id, == 判断的是对象的值
+
+<!SLIDE center subsection>
 
 # 比较关系运算符
 

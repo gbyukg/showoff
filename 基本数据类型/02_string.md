@@ -228,8 +228,8 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 | `s.isalpha()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是字母, 否则返回 `False` |
 | `s.isidentifier()` | 返回 `True` 如果字符串 `s` 不为空, 并且 `s` 可以做为一个合法的标识符, 否则返回 `False` |
 | `s.isspace()` | 返回 `True` 如果字符串 `s` 是由空白字符组成, 否则返回 `False` |
-| `s.isdecimal()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是十进制的 unicode 数字字符, 否则返回 `False` |
 | `s.isdigit()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是 ASCILL 的数值, 否则返回 `False` |
+| `s.isdecimal()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是十进制的 unicode 数字字符, 否则返回 `False` |
 | `s.isnumeric()` | 返回 `True` 如果字符串 `s` 不为空, 并且每个字符都是 Unicode 编码的数值, 否则返回 `False` |
 | `s.islower()` | 返回 `True` 如果字符串 `s` 中至少包含一个有大小写规则字符, 并且所有有大小写规则的字符全部为小写, 否则返回 `False` |
 | `s.isupper()` | 返回 `True` 如果字符串 `s` 中至少包含一个有大小写规则字符, 并且所有有大小写规则的字符全部为大写, 否则返回 `False` |
@@ -247,6 +247,7 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 | `s.strip(chars)` | 将字符串两边的空格去掉并返回 |
 
 .callout.info 由于字符串是非可变类型, 以上所有涉及修改字符串的函数都将返回一个新的字符串对象.
+.callout.info `isdecimal()` 和 `isnumeric()` Unicode 类型的字符串才有的方法, Python3 中创建的字符串默认是 Unicode, 而在 Python2 中, 字符串默认是 ASCILL 的, 可以通过在字符串前使用 `u` 将一个字符串转换成 Unicode, 如: `u'abc'`
 
 <!SLIDE transition=turnUp>
 # 字符串方法示例

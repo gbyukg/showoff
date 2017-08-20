@@ -117,14 +117,14 @@ Python 的列表提供了多个方法
 <!SLIDE transition=turnUp>
 # 列表变量的引用
 
-![list_reference.png.png](../_images/collectiontype/list_reference.png)
+![list_reference.png](../_images/collectiontype/list_reference.png)
 
 L1 与 L2 引用同一个列表对象, 通过任何一个变量对这个列表对象作出的修改, 都会反映到另一个变量上.
 
 `[:]`
 使用切片形式, 将会创建一个新的一模一样的列表对象.
 
-![list_reference.png.png](../_images/collectiontype/list_reference_copy.png.png)
+![list_reference.png](../_images/collectiontype/list_reference_copy.png)
 
 <!SLIDE transition=turnUp>
 # 列表推导式

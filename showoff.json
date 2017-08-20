@@ -41,7 +41,15 @@
       ]
     },
     {
-      "section": "逻辑控制"
+      "section": [
+        "逻辑控制/00_control_structures.md",
+        "逻辑控制/01_exception.md"
+      ]
+    },
+    {
+      "section": [
+        "异常/01_exception.md"
+      ]
     },
     {
       "section": "函数"
