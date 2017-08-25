@@ -25,6 +25,6 @@ print(new_val)
 
 # 这里函数 a 只是简单的将参数*2然后返回
 # 因此我们可以使用匿名函数来代替
-#  new_val = map(lambda val: val * 2, [1, 2, 3, 4, 5])
+new_val = map(lambda val: val * 2, [1, 2, 3, 4, 5])
 new_val = map(lambda val: val * 2, 'str')
 print(new_val)

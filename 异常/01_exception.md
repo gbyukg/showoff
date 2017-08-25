@@ -25,10 +25,14 @@
 <!SLIDE transition=turnUp>
 # 抛出异常
 
+在程序中我们可以使用 `raise` 手动抛出一个异常, 语法为:
+
     @@@ python
     raise exception(args)
-    raise exception(args) from original_exception
-    raise
+
+其中 `args` 是一个可选的参数, 一个用于描述异常信息的字符串.
+
+.callout.info 当我们在执行 python 脚本时, 如果指定了 `-o` 或 `-oo` 参数, 程序中的断言将不会被执行.
 
 <!SLIDE transition=turnUp>
 # 自定义异常

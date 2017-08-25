@@ -52,13 +52,24 @@
       ]
     },
     {
-      "section": "函数"
+      "section": [
+        "函数/00_function.md",
+        "函数/01_global_func.md",
+        "函数/03_lambda.md"
+      ]
+    },
+    {
+      "section": [
+        "面向对象/00_define_class.md",
+        "面向对象/01_class_variables.md",
+        "面向对象/02_clsmethod.md",
+        "面向对象/03_staticmethod.md",
+        "面向对象/04_inheritance.md",
+        "面向对象/05_newstyle_class.md"
+      ]
     },
     {
       "section": "模块"
-    },
-    {
-      "section": "面向对象"
     },
     {
       "section": "文件操作"
