@@ -1,14 +1,9 @@
-<!SLIDE center subsection>
-
-# pyenv
-
-https://github.com/pyenv/pyenv
-
 <!SLIDE transition=turnUp>
+# pyenv 的安装与使用
 
-# 从 pyenv 安装Python
+pyenv 是一个用 `SHELL` 编写的工具, 它可以让我们在系统中快速方便地安装多个 Python 版本, 并且在已安装的 Python 版本中随意地进行切换.
 
-pyenv 主要是用 `SHELL` 编写的工具, 它可以然我们在系统中同时安装多个 Python 版本, 在已安装的 Python 版本中随意地进行切换.
+pyenv项目地址: https://github.com/pyenv/pyenv
 
 ## 安装 pyenv
 
@@ -28,7 +23,7 @@ pyenv 主要是用 `SHELL` 编写的工具, 它可以然我们在系统中同时
 
 <!SLIDE transition=turnUp>
 
-## 使用 pyenv
+# 使用 pyenv
 
 查看 `pyven` 版本信息
 

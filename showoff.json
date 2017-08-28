@@ -23,7 +23,10 @@
       ]
     },
     {
-      "section": "进入Pythob"
+      "section": [
+        "进入Python/00_execute_python.md",
+        "进入Python/01_python_code.md"
+      ]
     },
     {
       "section": [
@@ -42,8 +45,7 @@
     },
     {
       "section": [
-        "逻辑控制/00_control_structures.md",
-        "逻辑控制/01_exception.md"
+        "逻辑控制/00_control_structures.md"
       ]
     },
     {
@@ -55,7 +57,7 @@
       "section": [
         "函数/00_function.md",
         "函数/01_global_func.md",
-        "函数/03_lambda.md"
+        "函数/02_lambda.md"
       ]
     },
     {
@@ -65,7 +67,10 @@
         "面向对象/02_clsmethod.md",
         "面向对象/03_staticmethod.md",
         "面向对象/04_inheritance.md",
-        "面向对象/05_newstyle_class.md"
+        "面向对象/05_magic_functions.md",
+        "面向对象/06_property_decorator.md",
+        "面向对象/07_iterator.md",
+        "面向对象/08_newstyle_class.md"
       ]
     },
     {

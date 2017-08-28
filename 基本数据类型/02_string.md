@@ -3,8 +3,6 @@
 
 和数字类型一样, 字符串同样是不可变对象. 为一个变量重新赋值一个新字符串值时, 实际上是创建了一个新的字符串对象, 并将该变量指向这个新创建的字符串对象.
 
-创建字符串内置函数 `str()`
-
 <!SLIDE transition=turnUp>
 # 创建字符串对象
 
@@ -80,8 +78,9 @@
 
 解决办法:
 
-- `# -*- coding: utf-8 -*-`
-- `# encoding: utf-8`
+- `# -*- coding:utf-8 -*-`
+- `# coding=utf-8`
+- `# -*- coding=utf-8 -*-`
 
 <!SLIDE transition=turnUp>
 # 转义字符

@@ -1,37 +1,26 @@
-<!SLIDE center subsection>
+<!SLIDE>
 
-# pip
+# Python 包管理工具 pip
 
-Python Package Manager: https://pypi.python.org/pypi/pip
+Python 中存在成千上万个第三方库, 当我们的程序中需要这些第三方库的时候, 可以通过python的包管理工具 [Python Package Manager](https://pypi.python.org/pypi/pip), 很容易的安装和更新这些第三方库.
 
-<!SLIDE incremental transition=turnUp>
-
-# 进入 pip
-
-获取帮助信息
-
-    @@@ Shell execute
-    pip -h
-
-获取子命令的帮助信息
-
-    @@@ Shell execute
-    pip install -h
-
-<!SLIDE incremental transition=turnUp>
-
-# pip install/uninstall
+## pip命令
 
     @@@ bash
+    # 查看帮助信息
+    pip help
+    pip help install
+
+    # 查找某个库
     pip search requests
 
-    # install package
+    # 安装 package 库
     pip install requests
 
     # 安装指定版本
-    pip install requests==2.0.0.
+    pip install requests==2.0.0
 
-    # minimum version
+    # 安装某个库时指定最小版本
     pip install requests>=2.18.3
 
     # 从文件安装
@@ -42,15 +31,10 @@ Python Package Manager: https://pypi.python.org/pypi/pip
 
     # 卸载 requirement.txt 文件中的所有包
     pip uninstall -r requirement.txt
-    
+
     # 卸载时不提示确认信息
     pip uninstall -y requests
 
-<!SLIDE incremental transition=turnUp>
-
-# pip 其他常用命令
-
-    @@@ bash
     # 列出当前已经安装的库
     pip list
 
@@ -73,9 +57,7 @@ Python Package Manager: https://pypi.python.org/pypi/pip
     # 更新所有
     pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip install -U 
 
-<!SLIDE incremental transition=turnUp>
-
-# pip requirments.txt
+## pip requirments.txt
 
     @@@ bash
     #

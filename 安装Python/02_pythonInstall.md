@@ -10,6 +10,11 @@
         libsq3-devel \
         openssl-devel 
 
+## 下载源码
+
+    @@@ bash
+    wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz
+
 ## 编译&安装
     @@@ bash
     ./configure --prefix=/usr/local/python2.7 && \
@@ -19,7 +24,7 @@
 查看 Python 版本
 
     @@@ Shell execute
-    /usr/local/python2.7/bin/python -V
+    /usr/local/python3.6/bin/python3 -V
 
 <!SLIDE bullets incremental transition=fade>
 ## autotools

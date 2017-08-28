@@ -1,5 +1,5 @@
 <!SLIDE transition=turnUp>
-# 类方法
+# 静态方法
 
 与定义类方法格式相同, 使用 `@staticmethod` 来定义一个静态方法
 

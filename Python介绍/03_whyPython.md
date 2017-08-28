@@ -11,5 +11,5 @@ Python既能够像 C 语言那样, 全面调用操作系统的接口(比如后�
   - 迄今为止, 世界上已经包含了上千个 Python 库, 从web开发, 到操作系统级别的库, 再到机器学习的库. [Python 库列表](https://pypi.python.org/pypi/pip)
   - [awesome Python](https://github.com/vinta/awesome-python) 这是一个份 Python 库列表, 列举了最常用的一些库.
 
-- 可应用在多个领域  
-Python 应用的领域极为广泛, 从大的方面来说, 包括 web 开发, 桌面程序(包括命令行工具), 计算机科学领域开发(尤其是在机器学习领域, 虽然 R 语言也应用在该领域中, 但对比起晦涩难懂的语法, 以及Python丰富的库, Python是当今世界上在该领域上应用最广泛的语言, 其中最著名的当属 Google 的 [tensorflow](https://github.com/tensorflow/tensorflow).
+- 应用领域广泛  
+Python 应用的领域极为广泛, 从大的方面来说, 包括 web 开发, 桌面程序(包括命令行工具), 计算机科学领域开发(尤其是在机器学习领域, 虽然 R 语言也应用在该领域中, 但比起晦涩难懂的语法, 以及Python丰富的库, Python是当今世界上在该领域上应用最广泛的语言, 其中最著名的当属 Google 的 [tensorflow](https://github.com/tensorflow/tensorflow)).
