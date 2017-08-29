@@ -1,16 +1,12 @@
-<!SLIDE center subsection>
+<!SLIDE>
 # Python 中的包
 
 包就是包含了一个或多个 Python 模块和一个 `__init__.py` 文件的文件夹.
 
-arithmetic
-├── __init__.py
-├── add.py
-├── adv
-│   ├── __init__.py
-│   ├── fib.py
-│   └── sqrt.py
-├── divide.py
-├── multiply.py
-└── subtract.py
-
+    @@@
+    arithmetic
+    ├── __init__.py
+    ├── add.py
+    ├── divide.py
+    ├── multiply.py
+    └── subtract.py

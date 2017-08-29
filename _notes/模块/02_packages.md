@@ -10,8 +10,8 @@ Python 中包的定义很简单, 就是一个目录, 首先这个目录下必须
 
     @@@ python
     # 引用一个包跟引用一个模块语法完全一样
-    # 使用 import 语句
-    import arithmetic
+    # 使用 import 语句导入 arithmetic 中的 add 模块
+    import arithmetic.add
 
     # 当引入这个包后
     # 我们可以用 dir() 内置函数观察一下当前文件中有哪些东西
@@ -30,12 +30,42 @@ Python 中包的定义很简单, 就是一个目录, 首先这个目录下必须
     result = arithmetic.add.add(1, 2)
     # 打印出结果
     print(result)
+
+    # 使用同样的方法导入
     # 使用除法
     # 注意这里模块名和方法名不同
     result = arithmetic.divide.division(5, 2)
 
-我们也可以导入包中的一个或多个模块
+    # 为了简介, 导入的时候也可以指定别名
+    arithmetic.add as add
+
+    # 从 add 模块中导入 add 方法
+    from arithmetic.add import add
+    result = add(5, 2)
+
+但是不管怎么写, 导入的时候每次都必须要指明 add 模块, 这样写很麻烦, 这是我们就可以通过修改 `__init__.py` 文件, 来指定默认导入的模块
 
     @@@ python
+    # 在 init.py 文件中增加
     import arithmetic.add
-    # 这样我们就只能使用 add 模块中的方法了.
+
+    # 修改 package.py
+    import arithmetic.py
+    # 这样我们就已经导入了 add 模块
+    # 但是调用的地方还是很麻烦
+    result = arithmetic.add.add(5, 2)
+
+再次修改 init.py 文件
+
+    @@@ python
+    from arithmetic.add import add
+
+    # 调用的时候就可以直接使用包名.add了
+    result = arithmetic.add(5, 2)
+
+    # 最后都加进来
+    from arithmetic.add import add
+    from arithmetic.divide import division
+    from arithmetic.multiply import multiply
+    # 也可以写成 .
+    from .subtract import subtract

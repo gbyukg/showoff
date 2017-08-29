@@ -1,2 +1,2 @@
-<!SLIDE center subsection>
+<!SLIDE>
 # `__future__` 模块

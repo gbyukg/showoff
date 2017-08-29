@@ -23,6 +23,15 @@
 - `from importable import object as preferred_name`
 - `from importable import *`
 
+.callout.info * 会导入模块中的所有变量和函数, 但是以下划线 `_` 开头的除外.
+
+## `__all__`
+
+明确指定当使用 `*` 时可以导入的变量或函数, 如:
+
+    @@@ python
+    __all__ = ['find_index', 'test']
+
 ## 模块查找路径
 
 当我们引用一个 Python 模块时, python 会在默认的路径下查找我们要引用的库, 可以通过 `sys.path` 打印出这些路径信息.

@@ -5,6 +5,7 @@ my_module = 5
 courses = ['History', 'Math', 'Physics']
 print(test)
 
+pr()
 index = find_index(courses, 'Math')
 print(index)
 
