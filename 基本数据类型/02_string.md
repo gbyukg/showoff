@@ -87,7 +87,6 @@
 
 | 转义字符   | 说明
 | --         |  -- |
-| `\newline` | 转义换行
 | `\\`       | 转义 \
 | `\'`       | 转义 '
 | `\"`       | 转义 "
@@ -138,7 +137,7 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 
 # 字符串索引
 
-在 Python 中, 我们可以通过下标索引的方式访问字符串中的某个或某一段子字符串(称之为: 切片), 格式为: `s[N]`, 其中 `N` 为字符索引位置, 其取值范围 `0 <= N < len(s)` 或 `-1 <= N <= -(len(s))`.
+在 Python 中, 我们可以通过下标索引的方式访问字符串中的某一个字符, 格式为: `s[N]`, 其中 `N` 为字符索引位置, 其取值范围 `0 <= N < len(s)` 或 `-1 <= N <= -(len(s))`.
 
 .callout.info `len() 为Python的内置函数, 可用来获取字符串的长度`
 
@@ -161,7 +160,7 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 
   - `start`: 表示字符串起始索引位置, 其值可为正, 也可为负, 忽略不写表示从 0 开始
   - `stop` 字符串终止索引位置, 其值可为正, 也可为负, 忽略不写表示到字符串结尾
-  - `step` 步长, 默认为 1
+  - `step` 步长, 其值可为正, 也可为负, 默认为 1
 
 最终截取到的字符串为: `start <= 片段 < stop`
 
@@ -173,31 +172,9 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 
   - `步长为负`: 从右至左, `start > stop`
 
-<!SLIDE transition=turnUp>
-
-# 字符切片示例
+## 字符切片示意图
 
 ![string_com2.png](../_images/datatype/string_slicing.png)
-
-步长为正
-
-    @@@ python
-    s = 'he ate camel food'
-    s[0:2]
-    s[:2]
-    s[3:6]
-    s[13:]
-    s[7:-5]
-    s[0:-5:3]
-    s[::]
-    s[::3]
-
-步长为负
-
-    @@@ python
-    s[5:2:-1]
-    s[::-1]
-    s[-1:2:-2]
 
 <!SLIDE transition=turnUp>
 
@@ -246,35 +223,8 @@ Python 中的字符串还支持使用 `in` 和 `not in` 关键字判断某一个
 | `s.strip(chars)` | 将字符串两边的空格去掉并返回 |
 
 .callout.info 由于字符串是非可变类型, 以上所有涉及修改字符串的函数都将返回一个新的字符串对象.
+
 .callout.info `isdecimal()` 和 `isnumeric()` Unicode 类型的字符串才有的方法, Python3 中创建的字符串默认是 Unicode, 而在 Python2 中, 字符串默认是 ASCILL 的, 可以通过在字符串前使用 `u` 将一个字符串转换成 Unicode, 如: `u'abc'`
-
-<!SLIDE transition=turnUp>
-# 字符串方法示例
-
-    @@@ python
-    ' '.join(('s1', 's2', 's3'))
-    # 's1 s2 s3'
-
-    record = "Leo Tolstory*182808028*1910-11-20"
-    record.find('Tolstory')
-    # 4
-    record.find('Tolstory', 0, 10)
-    # -1
-    record.find('Tolstory', 0, 15)
-    # 4
-    record.find('Tolstory', 0, -1)
-    # 4
-
-    record.replace('Leo', 'Zzl')
-    # 'Zzl Tolstory*182808028*1910-11-20'
-
-    fields = record.split("*")
-    fields
-    # ['Leo Tolstory', '1828-8-28', '1910-11-20']
-
-    born = fields[1].split("-")
-    born
-    # ['1828', '8', '28']
 
 <!SLIDE transition=turnUp>
 

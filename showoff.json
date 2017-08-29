@@ -74,7 +74,12 @@
       ]
     },
     {
-      "section": "模块"
+      "section": [
+          "模块/00_modules.md",
+          "模块/01_modules.md",
+          "模块/02_packages.md",
+          "模块/03_future_module.md"
+      ]
     },
     {
       "section": "文件操作"

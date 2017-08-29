@@ -1,73 +1,41 @@
-# `__name__`
+# package
 
-## 创建 first_module.py
+Python 中包的定义很简单, 就是一个目录, 首先这个目录下必须存在一个 `__init__.py` 的文件, 这个文件中的内容可以为空, 剩下就是一些 Python 的模块文件了, 在一个 包 中还可以包含多个子包.
 
-    @@@ python
-    # 当我们在看别人编写的代码时, 经常会看到这样的判断
-    def main():
-        pass
+包的作用就是把一系列相关功能放到一起, 这样维护是使用起来就比较方便了.
 
-    if __name__ == '__main__':
-        main()
+我这准备好了一个 `arithmetic` 目录, 结构很简单, 包含了一个 `__init__.py` 文件和一些 python 文件, 这些 python 中的代码非常简单, 都是只包含了一个简单函数的文件. 这就是一个包了, 可以看一下 `__init__.py`, 现在这个文件是一个空文件.
 
-    # 这个是什么意思呢?
-    # 首先让我们注释掉这段代码
-    # 直接输出 __name__ 看看结果是什么
-
-    print(__name__)
-    # 可以看到执行的结果就是 __main__
-    # 当 Python 在执行一段代码前
-    # 会提前设置好一些特殊变量
-    # 其中 __name__就是其中的一个特殊变量
-    # 当我们直接执行一个 Python 文件时
-    # __name__ 变量的值就会被设置为 __main__
-    # 而当我们将一个 Python 文件作为一个模块来导入时
-    # __name__ 的值就会被设置为文件名
-
-## 创建 second_module.py
+我在创建一个 `packages.py` 的文件用来使用这个包
 
     @@@ python
-    #!/usr/bin/env python
-    # encoding: utf-8
-    # 新增加一个文件: second_module.py
-    import first_module
-    # 修改第一个文件内容:
-    print('First module\'s Name: {}'.format(__name__))
-    # 执行代码
-    # 结果显示 first module 为 first_module
-    # 这是因为 first_module 文件时通过 seconde_module 文件执行的
-    # 这种情况下, __name__ 就被设置成了 文件名
+    # 引用一个包跟引用一个模块语法完全一样
+    # 使用 import 语句
+    import arithmetic
 
-    # 在 second_module.py 文件中增加
-    print('Second module\'s Name: {}'.format(__name__))
-    # 执行脚本
-    # 此时 second module 为 __main__
-    # 因为这个文件时直接通过 Python 来执行的.
+    # 当引入这个包后
+    # 我们可以用 dir() 内置函数观察一下当前文件中有哪些东西
+    print(dir())
+    # 从输出中可以看到, 多了一个 `arithmetic`, 就是我们上面刚刚引入的这个包
 
-## 说明
+    # 我们可以使用另一个内置函数 help() 查看这个包中有哪些属性
+    print(help('arithmetic'))
+    # 查看包中的某个模块信息
+    print(help('arithmetic.add'))
+    # 可以看到有一个 add 方法
+
+    # 调用这个模块中的 add 方法
+    # 这里一定要注意, 第一个add 是包下的模块,
+    # 第二个 add 才是模块下的方法
+    result = arithmetic.add.add(1, 2)
+    # 打印出结果
+    print(result)
+    # 使用除法
+    # 注意这里模块名和方法名不同
+    result = arithmetic.divide.division(5, 2)
+
+我们也可以导入包中的一个或多个模块
 
     @@@ python
-    # 删掉这段代码的注释
-    def main():
-        pass
-
-    if __name__ == '__main__':
-        main()
-    # 现在我们就应该清楚了
-    # 这段代码的意思就是
-    # 当这个文件时直接被 Python 执行
-    # 而不是以模块的形式被其他文件引入的时候
-    # 执行 main() 这个函数
-    # 因此把代码
-    # print('First module\'s Name: {}'.format(__name__))
-    # 放到 main() 函数中
-    def main():
-        print('First module\'s Name: {}'.format(__name__))
-    # 再次执行 first_module.py 文件
-    # 可以看到输出
-    # 当执行 second_module.py 文件时
-    # first_module 中的输出语句将不再被执行了.
-    # 当我们开发一个模块的时候
-    # 经常使用这种方式来写一些测试用例
-    # 或者是只有被 Pyton 直接执行的时候才想要运行的语句
-    # 都可以放到这个判断里
+    import arithmetic.add
+    # 这样我们就只能使用 add 模块中的方法了.

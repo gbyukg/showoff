@@ -32,27 +32,42 @@ windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Un
 
 # 切片
 
-![string_com2.png](../_images/datatype/string_slicing.png)
-
-步长为正
+步长为正, 起始位置要小于结束位置, 表示从左到右截取
 
     @@@ python
     s = 'he ate camel food'
     s[0:2]    # he
     s[:2]     # he
-    s[3:6]    # ate
     s[13:]    # food
+    s[-9:14]  # 'amel f'
     s[7:-5]   # camel
     s[0:-5:3] # ha m o
     s[::]     # he ate camel food
     s[::3]    # ha m d
 
-步长为负
+步长为负, 起始位置大于结束位置, 表示从右向左截取, 注意, 截取的结构是反顺的.
 
     @@@ python
     s[5:2:-1]  # eta
-    s[::-1]    # doof lemac eta eh
     s[-1:2:-2] # do ea t
+    s[::-1]    # doof lemac eta eh 反转
+
+# 字符串方法
+
+    @@@ python
+    s = 'strings are represented by the immutable str data type which holds a sequence of Unicode characters'
+    s.startswith('string') # True
+    s.startswith('are', 8) # True 还可以指定要搜索的起始位置
+    s.endswith('characters') # 判断是否以某个特定的字符串结尾
+    s.find('data') # 45 查找某个字符串出现的第一个位置
+    s.find('datas') # 返回 -1 如果没有找到结果
+    s.upper() # 返回大写形式
+    s.lower() # 返回小写形式
+    ' '.join('city') # 'c i t y' 每个字符之间使用空格分割, 这可能不是我们想要的结果
+    ' '.join(('city', 'DL')) # 可以传递一个元组, 元组在后面会降到
+    s.replace('imutabel', 'mutable') # 替换字符串
+    s.split(' ') # 用空格拆分字符串
+    ' str   '.strip() # 去除两边的空格
 
 # format
 

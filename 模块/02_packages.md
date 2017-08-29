@@ -3,9 +3,14 @@
 
 包就是包含了一个或多个 Python 模块和一个 `__init__.py` 文件的文件夹.
 
-<!SLIDE bullets incremental>
-# `__name__`
+arithmetic
+├── __init__.py
+├── add.py
+├── adv
+│   ├── __init__.py
+│   ├── fib.py
+│   └── sqrt.py
+├── divide.py
+├── multiply.py
+└── subtract.py
 
-    @@@ python
-    if __name__ == '__main':
-        suite

@@ -63,7 +63,7 @@ Python2 引用 division 模块
 
     @@@ Python execute
     from __future__ import division
-    print(5.0 / 3)
+    print(5 / 3)
 
 地板除
 
@@ -246,6 +246,10 @@ bool 的特殊作用
 
 ![整数在计算中的存储](../_images/datatype/int.png)
 
+浮点数内存结构图(定点数)
+
+![浮点数内存结构图](../_images/datatype/float.png)
+
 十进制小数
 <p><code>
 123.456 = 1*10<sup>2</sup> + 2*10<sup>1</sup> + 3*10<sup>0</sup> + 4*10<sup>-1</sup> + 5*10<sup>-2</sup> + 6*10<sup>-3</sup> = 1.23456*10<sup>2</sup>
@@ -257,10 +261,6 @@ bool 的特殊作用
 <p><code>
 1.01101 = 1*2<sup>0</sup> + 0*2<sup>-1</sup> + 1*2<sup>-2</sup> + 1*2<sup>-3</sup> + 0*2<sup>-4</sup> + 1*2<sup>-5</sup> = 0.25 + 0.125 + 0.03125 = 0.40625
 </p></code>
-
-浮点数内存结构图(定点数)
-
-![浮点数内存结构图](../_images/datatype/float.png)
 
 ---
 

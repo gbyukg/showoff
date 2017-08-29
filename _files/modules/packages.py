@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-print('First module\'s Name: {}'.format(__name__))
+import arithmetic
+#  print(dir('arithmetic'))
+#  print(help('arithmetic.divide'))
 
-if __name__ == '__main__':
-    print(__name__)
+#  result = arithmetic.divide.division(5, 2)
+result = arithmetic.add.add(5, 2)
+#  result = arithmetic.divide.division(5, 2)
+#  result = arithmetic.multiply.multiply(5, 2)
+print(result)

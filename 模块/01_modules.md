@@ -9,7 +9,7 @@
 - `import importable1, importable2, ..., importableN`
 - `import importable as preferred_name`
 
-`importable` 是一个模块名, 包名, 或是模块下的某一个包.
+`importable` 可以是一个模块名, 包名, 或是模块下的某一个包.
 
     @@@ python
     import requests
@@ -31,9 +31,20 @@
     import sys
     print(sys.path)
 
-我们可以通过设定环境变量 `PYTHONPATH` 来追加搜索路径, `PYTHONPATH` 应该指向一个目录.
+我们可以通过设定环境变量 `PYTHONPATH` 来曾加搜索路径, `PYTHONPATH` 应该指向一个目录.
+
+    @@@ bash
+    export PYTHONPATH=/home/zlock/custom/modules
+
+这样 `/home/zlock/custom/modules` 路径就会被放到 Python 的查找路径中, 它的位置紧跟在当前路径的下一个查找路径.
 
 .callout.info 我们可以通过 `python -c 'import requests'` 语句快速检测一个模块是否存在.
+
+## `__name__`
+
+    @@@ python
+    if __name__ == '__main__':
+        suite
 
 <!SLIDE transition=turnUp>
 ## Python 引用模块流程
