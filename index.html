@@ -14523,6 +14523,14 @@ import requests.api</code></pre>
 <li><code>from importable import *</code></li>
 </ul>
 
+<p class="callout info">* 会导入模块中的所有变量和函数, 但是以下划线 <code>_</code> 开头的除外.</p>
+
+<h2><code>__all__</code></h2>
+
+<p>明确指定当使用 <code>*</code> 时可以导入的变量或函数, 如:</p>
+
+<pre class="highlight"><code class="language-python">__all__ = ['find_index', 'test']</code></pre>
+
 <h2>模块查找路径</h2>
 
 <p>当我们引用一个 Python 模块时, python 会在默认的路径下查找我们要引用的库, 可以通过 <code>sys.path</code> 打印出这些路径信息.</p>
@@ -14644,6 +14652,11 @@ index = ff(courses, 'Math')</code></pre>
 from my_module import *</code></pre>
 
 <p>但是尽量不要使用这种方式, 如果被导入的库很大的话, 很容易造成混乱, 或者是造成命名冲突.</p>
+
+<h2><strong>all</strong></h2>
+
+<pre class="highlight"><code class="language-python"># 在 my_module.py 中使用
+__all__ = ['find_index', 'test']</code></pre>
 
 <h1>模块查找路径</h1>
 
@@ -14830,6 +14843,11 @@ from my_module import *</code></pre>
 
 <p>但是尽量不要使用这种方式, 如果被导入的库很大的话, 很容易造成混乱, 或者是造成命名冲突.</p>
 
+<h2><strong>all</strong></h2>
+
+<pre class="highlight"><code class="language-python"># 在 my_module.py 中使用
+__all__ = ['find_index', 'test']</code></pre>
+
 <h1>模块查找路径</h1>
 
 <p>当我们导入一个模块时, Python 是怎么找到这些模块的呢? 或者说 Python 在哪些路径下查找这些模块呢?</p>
@@ -14895,22 +14913,18 @@ print('the value of name in my_module is: {}'.format(__name__))</code></pre>
 </div></div>
 <canvas class="annotations"></canvas>
 </div>
-<div data-section="模块" data-title="02_packages" id="___02_packages" class="slide center subsection" data-transition="none">
-<div class="content center subsection" ref="模块/02_packages">
+<div data-section="模块" data-title="02_packages" id="___02_packages" class="slide" data-transition="none">
+<div class="content " ref="模块/02_packages">
 <h1>Python 中的包</h1>
 
 <p>包就是包含了一个或多个 Python 模块和一个 <code>__init__.py</code> 文件的文件夹.</p>
 
-<p>arithmetic
-├── <strong>init</strong>.py
+<pre class="highlight"><code>arithmetic
+├── __init__.py
 ├── add.py
-├── adv
-│   ├── <strong>init</strong>.py
-│   ├── fib.py
-│   └── sqrt.py
 ├── divide.py
 ├── multiply.py
-└── subtract.py</p>
+└── subtract.py</code></pre>
 </div>
 <div class="notes-section notes"><div class="personal">
 <h1>Personal Notes</h1>
@@ -14925,8 +14939,8 @@ print('the value of name in my_module is: {}'.format(__name__))</code></pre>
 <p>我在创建一个 <code>packages.py</code> 的文件用来使用这个包</p>
 
 <pre class="highlight"><code class="language-python"># 引用一个包跟引用一个模块语法完全一样
-# 使用 import 语句
-import arithmetic
+# 使用 import 语句导入 arithmetic 中的 add 模块
+import arithmetic.add
 
 # 当引入这个包后
 # 我们可以用 dir() 内置函数观察一下当前文件中有哪些东西
@@ -14945,19 +14959,48 @@ print(help('arithmetic.add'))
 result = arithmetic.add.add(1, 2)
 # 打印出结果
 print(result)
+
+# 使用同样的方法导入
 # 使用除法
 # 注意这里模块名和方法名不同
-result = arithmetic.divide.division(5, 2)</code></pre>
+result = arithmetic.divide.division(5, 2)
 
-<p>我们也可以导入包中的一个或多个模块</p>
+# 为了简介, 导入的时候也可以指定别名
+arithmetic.add as add
 
-<pre class="highlight"><code class="language-python">import arithmetic.add
-# 这样我们就只能使用 add 模块中的方法了.</code></pre>
+# 从 add 模块中导入 add 方法
+from arithmetic.add import add
+result = add(5, 2)</code></pre>
+
+<p>但是不管怎么写, 导入的时候每次都必须要指明 add 模块, 这样写很麻烦, 这是我们就可以通过修改 <code>__init__.py</code> 文件, 来指定默认导入的模块</p>
+
+<pre class="highlight"><code class="language-python"># 在 init.py 文件中增加
+import arithmetic.add
+
+# 修改 package.py
+import arithmetic.py
+# 这样我们就已经导入了 add 模块
+# 但是调用的地方还是很麻烦
+result = arithmetic.add.add(5, 2)</code></pre>
+
+<p>再次修改 init.py 文件</p>
+
+<pre class="highlight"><code class="language-python">from arithmetic.add import add
+
+# 调用的时候就可以直接使用包名.add了
+result = arithmetic.add(5, 2)
+
+# 最后都加进来
+from arithmetic.add import add
+from arithmetic.divide import division
+from arithmetic.multiply import multiply
+# 也可以写成 .
+from .subtract import subtract</code></pre>
 </div></div>
 <canvas class="annotations"></canvas>
 </div>
-<div data-section="模块" data-title="03_future_module" id="___03_future_module" class="slide center subsection" data-transition="none">
-<div class="content center subsection" ref="模块/03_future_module">
+<div data-section="模块" data-title="03_future_module" id="___03_future_module" class="slide" data-transition="none">
+<div class="content " ref="模块/03_future_module">
 <h1>
 <code>__future__</code> 模块</h1>
 </div>
