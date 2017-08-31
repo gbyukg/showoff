@@ -32,7 +32,8 @@
       "section": [
         "基本数据类型/00_varaibles.md",
         "基本数据类型/01_number.md",
-        "基本数据类型/02_string.md"
+        "基本数据类型/02_float.md",
+        "基本数据类型/03_string.md"
       ]
     },
     {

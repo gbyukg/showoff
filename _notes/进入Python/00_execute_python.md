@@ -1,4 +1,11 @@
 # 执行 Python
+    @@@ bash
+    python
+
+    >>> print("Hi, Python")
+    >>> exit() # CTRL-D CTRL-C: SIGINT
+
+---
 
 想要执行一个 Python 代码, 可以有两种方式, 一种是通过使用Python shell, 一种交互模式的 Python 解释器, 被称作 iPython, 在里面我们可以直接运行 Python 代码.  
 直接执行 python 命令, 不使用任何参数, 就打开了一个交互式的 python 解释器, 输入 `print('hi Python')` 执行 Python 代码. 要想退出 iPython, 可以调用 `exit()`['ɛɡzɪt] 函数, 或是直接使用 `CTRL-D` 命令.  
@@ -15,10 +22,3 @@ http://img.blog.csdn.net/20160630234148703
 [web 终端](https://www.tutorialspoint.com/codingground.htm)
 
 [iterable](http://www.pythonabc.com/iterable-and-iterator/)
-
-
-两种执行方式, ipython 和 执行 python 脚本文件
-
-python 也支持交互模式, 直接输入 `python` 命令就可进入, 可以通过输入 `exit()`['ɛɡzɪt]函数来退出交互模式, 或直接使用快捷键 `CTRL-D`, `CTRL-D` 是什么意思?
-
-`CTRL-D` 代表的是文件结束符(end of file) `EOF`, 它跟 `CTRL-C` 并不一样, `CTRL-C` 是一个信号.

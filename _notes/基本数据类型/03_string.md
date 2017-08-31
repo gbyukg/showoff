@@ -1,4 +1,18 @@
 # 字符串类型
+    @@@ python
+    s1 = 'string'
+    s2 = 's2 = ' this \
+    is \
+    one \
+    line'
+    s3 = ''' This is a mutilple lines string.
+        Line2
+    line3
+
+    's' + 'tr' + 'ing'
+
+    '=' * 5
+    '''
 
 # 转义字符, 进度条实现
 windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Unix 系统, 使用一个字符 `\n` 即可
@@ -30,6 +44,13 @@ windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Un
 # 字符串索引
 从上图可以看出, Python 不仅支持正数的索引下标, 同时还支持负数的索引下标: 表示从字符串的右边开始计算.
 
+    @@@ python
+    s = 'Light ray'
+    s[0]
+    s[4]
+    s[-1]
+    s[15]
+
 # 切片
 
 步长为正, 起始位置要小于结束位置, 表示从左到右截取
@@ -45,9 +66,7 @@ windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Un
     s[::]     # he ate camel food
     s[::3]    # ha m d
 
-步长为负, 起始位置大于结束位置, 表示从右向左截取, 注意, 截取的结构是反顺的.
-
-    @@@ python
+    # 步长为负, 起始位置大于结束位置, 表示从右向左截取, 注意, 截取的结构是反顺的.
     s[5:2:-1]  # eta
     s[-1:2:-2] # do ea t
     s[::-1]    # doof lemac eta eh 反转
@@ -61,6 +80,8 @@ windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Un
     s.endswith('characters') # 判断是否以某个特定的字符串结尾
     s.find('data') # 45 查找某个字符串出现的第一个位置
     s.find('datas') # 返回 -1 如果没有找到结果
+    # 还可以使用 in 和 not in 来判断某个字符或字符串是否在一个字符串中
+    'are' in s
     s.upper() # 返回大写形式
     s.lower() # 返回小写形式
     ' '.join('city') # 'c i t y' 每个字符之间使用空格分割, 这可能不是我们想要的结果

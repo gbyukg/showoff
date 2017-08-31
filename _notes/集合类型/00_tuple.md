@@ -1,3 +1,94 @@
+# 序列
+整型, 浮点型, 布尔型都只有一个值, 不属于.  
+但是字符串是, 包含了多个字符. `s = 'str'` 由 3 个字符组成.
+
+- 向前面提到过, 可以用 `in` 和 `not in` 判断字符串
+- `len(str)`, 注意调用方式, 跟之前使用string方法不太一样, 内置函数. string 方法是string类的方法
+
+# 元组
+    @@@ python
+    # 最后一个元素可以加逗号, 也可以不加
+    (1, 2, 3)
+    (1, 'two', 3)
+
+    # 也可以不使用括号
+    a = 1, 2, 'three'
+    type(a)
+    # 只有一个元素时, 后面必须有逗号
+    a = 1,
+
+# 访问元素
+    @@@ python
+    t = (1, 2, ('venus', -28, 'green', '21', -28, 19.75), 'STG', 'SWG')
+    t[1]
+    t[-2]
+    t[2][2]
+
+    t = ('venus', -28, 'green', '21', -28, 19.75)
+    t[2:]
+    t[:2]
+    t[::]
+    t[::-1]
+
+# 元组中的函数
+    @@@ python
+    t = ('venus', -28, 'green', 21, -28, 19.75)
+    t.count(-28)
+    t.index('green')
+
+    # 获取长度
+    len(t)
+
+    # 相加
+    (1,) + (2, 3)
+
+    # 相乘
+    (1,) * 5
+
+    21 in t
+    21 not in t
+
+# 解压元组
+    @@@ python
+    # 左边数量大于右边, 则报错
+    # 左边数量小于右边, 多出的则忽略
+    first, last = ('Jims', 'Smith')
+
+    # 在Python3中的新增加了一项功能, 可以使用 `*` 来代替剩余元素.
+    tup_str = ('str1', 'str2', 'str3', 'str4')
+    str1, str2, *str3 = tup_str
+    str1, *str2, str3 = tup_str
+
+# 命名元组
+
+元组只能通过索引来访问, 可以使用 Python 的扩展功能创建一个命名元组, 它可以让我们通过名字来访问元组中的元素. 访问数据库时, 将列明作为命名元组.
+
+    @@@ python
+    # 使用前先要定义一个命名元组类型
+    import collections
+    # 第一个参数类名
+    Sale = collections.namedtuple("Sale", "productid customerid date quantity price")
+    # 查看
+    dir()
+    dir(Sale)
+    help(Sale)
+
+    # 创建命名元组实例
+    s1 = Sale(432, 921, "2017-01-01", 3, 7.99)
+    s2 = Sale(date='2017-01-01', productid=432, customerid=921, quantity=3, price=7.99)
+
+    # 访问
+    s1.productid
+    s2.date
+
+    # 返回一个元组, 包含了所有元素名
+    s1._fields
+
+    # 获取一个列表
+    s1._asdict()
+
+---
+
 # 什么是可迭代对象
 
 简单来说, 在 Python 中, 所有可直接作用到 `for` 循环上的对象, 都是可迭代对象

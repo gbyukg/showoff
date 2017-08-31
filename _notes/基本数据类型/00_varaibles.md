@@ -1,12 +1,68 @@
+# 特点
+
+- C/C++不同, 定义变量时不需要指明变量类型, 并不代表变量没有类型, 只是 Python 自动帮我们确定了变量的类型.
+- Python 强类型: `php -r "echo 'abc' + 3;"`
+
+![language type](../_images/datatype/language_type.png)
+
+# 变量命名规则
+
+    @@@ python
+    # 获取Python中的所有关键字
+    import keyword
+    print(keyword.kwlist)
+
+# 约定俗成
+
+    @@@ python
+    # 可用来查看对象内的属性和方法
+    dir()
+    dir(__builtins__)
+
+    id(5)
+    id = 5
+    id(5)
+
+# 语法
+动态类型语言
+
+    @@@ python
+    # 字符串`
+    language = 'Python'
+
+    # 查看变量类型
+    type(language)
+
+    # 整数
+    major_version = 3
+
+    # 浮点数型
+    minor_version = 36.1
+
+    # 列表
+    python_versions = [3, 36, 1]
+
+    # 同时为多个变量赋值
+    a = b = c = 1
+
+    # 同时赋值多个变量
+    val1, val2, val3 = 1, 'str1', 'zzl'
+
+    # 删除变量
+    del language
+---
+
 # Python 变量
 
 无论是那种编程语言, 都离不开变量.
 
 Python 中的变量有几个特点:
 
-Python 属于解释型语言, 在执行 Python 代码前不需要事先把 Python 代码编译成机器码文件, 当我们运行 Python 脚本时 Python 解释器就会自动将代码翻译成机器码后在执行. 向 C/C++ 这种属于编译型语言  
+
 Python 属于动态类型语言, Python 解释器在解释变量时会根据变量的值自动分配合适的内存空间给变量, 因此我们不需要在声明变量时指定变量的类型, 并且一个变量可以被多次赋给不同类型的值. 比如说给一个变量赋值一个整数后, 还可以重新给这个变量赋一个字符串类型的值. 像 Java 这种属于静态类型语言.  
-Python 属于强类型语言, 因此在不同类型的变量之间做操作时不会做自动转换处理, 比如把一个字符串和一个数字相加, 就会直接提示错误了. 像 PHP, JS 属于弱类型语言.
+Python 属于强类型语言, 因此在不同类型的变量之间做操作时不会做自动转换处理, 比如把一个字符串和一个数字相加, 就会直接提示错误了. 像 PHP, JS 属于弱类型语言. `php -r "echo 'abc' + 3;"`
+
+定义变量时不需要指明变量类型, 并不代表变量没有类型, 只是 Python 自动帮我们确定了变量的类型.
 
 ![language type](../_images/datatype/language_type.png)
 

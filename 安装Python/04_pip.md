@@ -8,14 +8,19 @@ Python 中存在成千上万个第三方库, 当我们的程序中需要这些�
 
     @@@ bash
     # 查看帮助信息
-    pip help
-    pip help install
+    pip -h
+    pip install -h
 
-    # 查找某个库
+    # 查询某个库
     pip search requests
 
-    # 安装 package 库
+    # 安装库
     pip install requests
+
+    # 卸载库
+    pip uninstall requests
+    # 卸载时不提示确认信息
+    pip uninstall -y requests
 
     # 安装指定版本
     pip install requests==2.0.0
@@ -25,22 +30,6 @@ Python 中存在成千上万个第三方库, 当我们的程序中需要这些�
 
     # 从文件安装
     pip install -r requirements.txt
-
-    # 卸载库
-    pip uninstall requests
-
-    # 卸载 requirement.txt 文件中的所有包
-    pip uninstall -r requirement.txt
-
-    # 卸载时不提示确认信息
-    pip uninstall -y requests
-
-    # 列出当前已经安装的库
-    pip list
-
-    # 显示当前已安装库的详细信息
-    pip show Pympler
-    pip show --verbose Pympler
 
     # 打印出当前系统中安装的库及其版本信息
     pip freeze

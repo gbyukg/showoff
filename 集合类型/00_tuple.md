@@ -1,7 +1,7 @@
 <!SLIDE center incremental subsection>
 # 序列
 
-序列类型是指包含了0个或多个元素的组合, 所有的序列类型都支持一下功能:
+序列类型是指包含了0个或多个元素的组合, 所有的序列类型都支持以下的功能:
 
 - 支持使用成员关系操作符 `in` 判断是否某个特定成员存在于序列中.
 
@@ -18,16 +18,16 @@ Python一共提供了五种内置的序列类型: `str`, `tuple`, `list`, `bytes
 <!SLIDE>
 # 元组(tuple)
 
-元组是一个包含0个或多个元素的有序组合, 各个元素之间使用逗号`,` 分隔, 其中元组中的元素类型可以是任意的组合. 元组使用 `圆括号()` 来表示.
+元组是一个包含0个或多个元素的 **有序** 的不可变组合, 各个元素之间使用逗号( `,`) 分隔, 其中元组中的元素类型可以是任意的组合. 元组使用 `圆括号()` 来表示.
+
+.callout.warning 元组是一种不可变序列类型, 一旦定义好一个元组后, 任何对其元素进行增加, 修改 或 删除的操作, 都将抛出 `TypeError` 异常.
+
+示例
 
     @@@ python
     (1, 2, 3)
-    ('str1', 'str2', 'str3')
-    (1, 'one', 'two', 3)
-    (1, ('one', 'tow'), 3)
-    ('one',)
-
-.callout.warning 元组是一种不可变序列类型, 一旦定义好一个元组后, 任何对其元素进行增加, 修改 或 删除的操作, 都将抛出 `TypeError` 异常.
+    ('one', 'two', 'three')
+    (1, 'two', (3, 4))
 
 <!SLIDE transition=turnUp>
 # 创建元组
@@ -75,22 +75,19 @@ Python一共提供了五种内置的序列类型: `str`, `tuple`, `list`, `bytes
     t = ('a',)  # 结尾逗号不能少
     print(t)
 
-.callout.info Python3 中移除了 `xrang()`, 而 `rang()` 被修改成了返回一个可迭代对象, 而在不是一个元组了.
-
 <!SLIDE transition=turnUp>
-# 访问元组中的元素
+# 访问元组中的元素及切片
 
 与 `str` 对象一样, 使用 `[下标索引]` 的方式来访问元组中的元素
 
     @@@ python execute
-    t = (1, ('venus', -28, 'green', '21', -28, 19.75), 'STG', 'SWG')
-    print(t[0])
-    print(t[-2])
-    print(t[1][0])
+    t = (1, 2, ('venus', -28, 'green', '21', -28, 19.75), 'STG', 'SWG')
+    t[1]
+    t[-2]
+    t[2][2]
 
-.callout.warning 如果索引超出范围, 则抛出 `ValueError` 异常.
+.callout.info 如果索引超出范围, 则抛出 `ValueError` 异常.
 
-<!SLIDE transition=turnUp>
 # 元组切片
 
 元组中的切片操作与字符串中的切片操作完全一致
@@ -109,7 +106,7 @@ Python一共提供了五种内置的序列类型: `str`, `tuple`, `list`, `bytes
     @@@ Console
     ('green', '21', -28, 19.75)
     ('venus', -28)
-    ('venus', -28, 'green', '21', -28, 19.75)
+    ('venus', -28, 'green', 21, -28, 19.75)
     (19.75, -28, '21', 'green', -28, 'venus')
 
 <!SLIDE transition=turnUp>
@@ -154,12 +151,6 @@ tuple 只有2个函数:
     hair = ("black", "brown", "blonde", "red")
     for col in hair:
         print(col)
-
-内置函数 `range()`
-
-    @@@ python execute
-    for i in range(1, 10):
-        print(i)
 
 <!SLIDE transition=turnUp>
 # 解压元组
@@ -228,5 +219,5 @@ Python3中的新功能
 `_asdict()` 返回一个字典对象, 以键值对的形式返回对应的值
 
     @@@ python
-    dir_val = s1.__asdict()
+    dir_val = s1._asdict()
     print(dir_val['customerid'])

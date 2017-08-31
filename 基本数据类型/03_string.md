@@ -12,11 +12,6 @@
     s1 = 'string1'
     print(s1)
 
-`str()` 内置函数
-
-    @@@ python execute
-    print(str('string'))
-
 多行字符串
 
     @@@ python execute
@@ -29,10 +24,10 @@
 三引号(triple quoted string)
 
     @@@ python execute
-    s3 = """This is a multiple lines string.
+    s3 = '''This is a multiple lines string.
     line2
         line3
-    """
+    '''
     print(s3)
 
 括号中的字符串
@@ -41,6 +36,11 @@
     s4 = ("This is the nice way to join two long string "
     "togeter; it relies on string literal concatenation.")
     print(s4)
+
+`str()` 内置函数
+
+    @@@ python execute
+    print(str('string'))
 
 .callout.info 在 Python 中, 单引号与双引号意义完全相同, 因此上面的示例都可以使用双引号来代替
 
@@ -79,8 +79,8 @@
 解决办法:
 
 - `# -*- coding:utf-8 -*-`
-- `# coding=utf-8`
 - `# -*- coding=utf-8 -*-`
+- `# coding=utf-8`
 
 <!SLIDE transition=turnUp>
 # 转义字符

@@ -1,4 +1,39 @@
 # virtualenv
+    @@@ bash
+    virtualenv -h
+
+    virtualenv proj1
+
+    # proj1/lib/python2.7/site-packages/
+    pip install requests
+
+    . proje1/bin/activate
+    python -V
+
+    export
+
+    deactivate
+
+    virtualenv --python /root/.pyenv/versions/2.7.13/bin/python proj2
+    python -V
+
+# pyenv virtualenv
+    @@@ bash
+    pyenv virtualenv 3.6.2 proj1
+    pyenv virtualenv 3.7.13 proj2
+
+    pyenv virtualenvs
+
+    pyenv uninstall proj1
+
+    pyenv activate proj2
+
+    pyenv deactivate
+
+    mkdir proj2
+    pyenv local proj2
+
+---
 
 最后在介绍一个更炫酷的工具 virtualenv
 

@@ -25,56 +25,36 @@ pyenv项目地址: https://github.com/pyenv/pyenv
 
 # 使用 pyenv
 
-查看 `pyven` 版本信息
-
-    @@@ Shell execute
+    @@@ bash
+    # 查看 pyenv 版本信息
     pyenv -v
 
-获取帮助信息
-
-    @@@ Shell execute
+    # 查看帮助信息
     pyenv -h
-
-获取子命令帮助信息
-
-    @@@ Shell execute
     pyenv install -h
 
-查看可以安装的 Python 版本
-
-    @@@ Shell execute
+    # 列出所有可用的 python 版本
     pyenv install -l
 
-安装指定的 Python 版本
-
-    @@@ bash
+    # 安装一个指定的 python 版本
     pyenv install 3.6.2
 
-<!SLIDE transition=turnUp>
-
-# pyenv 常用命令
-
-查看系统中安装了哪些 Python 版本
-
-    @@@ Shell execute
+    # 查看当前系统中安装了哪些 Python 版本
     pyenv versions
 
-查看当前 pyenv 使用的 Python 版本
+    # 设置某个版本作为系统的默认版本
+    pyenv global 3.6.2
+    # 查看当前系统默认版本信息
+    pyenv global
 
-    @@@ Shell execute
+    # 查看当前使用的 Python 版本
     pyenv version
 
-设置默认的 Python 版本
+    # 查看当前所使用的 Python 的路径信息
+    pyenv which python
 
-    @@@ bash
-    pyenv global 3.6.2
-
-为当前目录设置 Python 版本
-
-    @@@ bash
+    # 为某个目录设置单独的 Python 版本
     pyenv local 3.6.2
 
-显示当前使用的 pyenv 的路径信息
-
-    @@@ Shell execute
-    pyenv which python
+    # 取消当前目录设定
+    pyenv local --unset

@@ -135,3 +135,10 @@ L1 与 L2 引用同一个列表对象, 通过任何一个变量对这个列表�
 
 - `[expression for item in iterable]`
 - `[expression for item in iterable if condition]`
+
+<!SLIDE transition=turnUp>
+# range()
+
+Python2 提供了更
+
+.callout.info Python3 中移除了 `xrang()`, 而 `rang()` 被修改成了返回一个可迭代对象, 而在不是一个元组了.

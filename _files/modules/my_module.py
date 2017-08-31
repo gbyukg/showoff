@@ -1,7 +1,7 @@
 print("imported my_module...")
 print('the value of name in my_module is: {}'.format(__name__))
 
-#  __all__ = ['find_index', 'test']
+__all__ = ['find_index', 'test']
 
 test = 'Test String'
 
