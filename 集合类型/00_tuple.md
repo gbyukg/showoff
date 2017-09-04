@@ -80,7 +80,7 @@ Python一共提供了五种内置的序列类型: `str`, `tuple`, `list`, `bytes
 
 与 `str` 对象一样, 使用 `[下标索引]` 的方式来访问元组中的元素
 
-    @@@ python execute
+    @@@ python
     t = (1, 2, ('venus', -28, 'green', '21', -28, 19.75), 'STG', 'SWG')
     t[1]
     t[-2]
@@ -121,7 +121,7 @@ tuple 只有2个函数:
 
 使用 `len()` 获取元组的长度
 
-    @@@ python execute
+    @@@ python
     len(t)
 
 使用 `+` 来拼接多个元组来生成一个新的元组对象(只能是元组相加)

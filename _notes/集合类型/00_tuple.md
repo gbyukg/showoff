@@ -7,9 +7,17 @@
 
 # 元组
     @@@ python
-    # 最后一个元素可以加逗号, 也可以不加
+    ()
+    type(())
     (1, 2, 3)
     (1, 'two', 3)
+    # 包含另一个元组的元组
+    (1, 'two', (3, 'three'))
+
+    # 最后一个元素可以加逗号, 也可以不加
+    # 只有一个元素时, 必须加
+    type((1))
+    type((1,))
 
     # 也可以不使用括号
     a = 1, 2, 'three'
@@ -32,6 +40,8 @@
 
 # 元组中的函数
     @@@ python
+    help(tuple)
+
     t = ('venus', -28, 'green', 21, -28, 19.75)
     t.count(-28)
     t.index('green')
@@ -50,9 +60,14 @@
 
 # 解压元组
     @@@ python
-    # 左边数量大于右边, 则报错
-    # 左边数量小于右边, 多出的则忽略
+    # 还记得刚才讲变量时的一个赋值语句么
+    val1, val2, val3 = 1, 'str1', 'str2'
+    # 右边其实就是一个元组
+    val1, val2, val3 = (1, 'str1', 'str2')
+
     first, last = ('Jims', 'Smith')
+    first
+    last
 
     # 在Python3中的新增加了一项功能, 可以使用 `*` 来代替剩余元素.
     tup_str = ('str1', 'str2', 'str3', 'str4')
@@ -67,6 +82,8 @@
     # 使用前先要定义一个命名元组类型
     import collections
     # 第一个参数类名
+    # 其实就是创建一个名字为 Sale 的类, 并把这个类赋值给了 Sale 变量
+    # 列名
     Sale = collections.namedtuple("Sale", "productid customerid date quantity price")
     # 查看
     dir()

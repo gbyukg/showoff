@@ -85,6 +85,8 @@
 ![Alt text](../_images/datatype/val.png)
 ![Alt text](../_images/datatype/val1-2.png)
 
+.callout.warning 数值类型中 `-5 ~ 256` 内的数值 Python 会自动为其提前分配好对象.
+
 <!SLIDE>
 
 # 整型进制转换

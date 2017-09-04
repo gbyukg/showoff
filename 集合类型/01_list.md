@@ -5,14 +5,6 @@
 
 与元组不同, 列表中的元素是可以任意修改的.
 
-    @@@ python
-    [1, 2, 3]
-    ['str1', 'str2', 'str3']
-    [1, 'one', 'two', 3]
-    [1, ['one', 'tow'], 3]
-    ['one']
-
-<!SLIDE transition=turnUp>
 # 创建列表
 
 使用内置函数 list()
@@ -46,6 +38,23 @@
     L[4][2] == L[4][-1] == L[-2][2] == L[-2][-1] == 'echo'
     L[4][2][1] == L[4][2][-3] == L[-2][-1][1] == L[-2][-1][-3] == 'C'
 
+修改列表元素
+
+    @@@ python
+    L = [-17.5, "kilo", 49, "V", ["ram", 5, "echo"], 7]
+
+    L[1] = 15.4
+
+    L[2:4] = [1, 2, 3, 4]
+
+    L[2:4] = []
+
+    L[:0] = [0]
+
+    L[-1:] = 'latest'
+
+    l[1:1] = 'secondly'
+
 使用 `len()` 获取列表的长度
 
     @@@ python execute
@@ -71,29 +80,6 @@
     print('yellow' in hair)
     print('yellow' not in hair)
 
-使用 for in 迭代序列对象
-
-    @@@ python execute
-    hair = ["black", "brown", "blonde", "red"]
-    for col in hair:
-        print(col)
-
-<!SLIDE transition=turnUp>
-# 修改列表元素
-
-    @@@ python
-    L = [-17.5, "kilo", 49, "V", ["ram", 5, "echo"], 7]
-
-    L[1] = 15.4
-    print(L)
-
-    L[2:4] = [1, 2, 3, 4]
-    print(L)
-
-    L[2:4] = []
-    print(L)
-
-
 <!SLIDE transition=turnUp>
 # 列表方法
 
@@ -109,10 +95,12 @@ Python 的列表提供了多个方法
 | `L.pop(i)`       | 移除并返回下标所有为 `i` 的元素 |
 | `L.remove(x)`    | 从列表的最左侧开始移除第一个 `x` 元素, 如果元素 `x` 不存在, 则抛出 `ValueError` 异常 |
 | `L.clear()`       | 移除所有元素 |
-| `L.acount(x)`    | 返回元素 `x` 在列表中出现的次数 |
+| `L.count(x)`    | 返回元素 `x` 在列表中出现的次数 |
 | `L.copy()`       | |
 | `L.reverse()`    | 反转列表中的所有元素(子列表并不会被翻转) |
 | `L.sort()`       | |
+
+.callout.warning 列表里的所有方法都直接作用于列表本身.
 
 <!SLIDE transition=turnUp>
 # 列表变量的引用
@@ -126,6 +114,49 @@ L1 与 L2 引用同一个列表对象, 通过任何一个变量对这个列表�
 
 ![list_reference.png](../_images/collectiontype/list_reference_copy.png)
 
+## 列表中的 `+` 和 `+=`
+
+- 对列表使用 `+` 会重新定义一个新对象
+- 对列表使用 `+=` 则直接修改源里表
+
+<!SLIDE transition=turnUp>
+# 迭代序列类型
+
+使用 `for...in` 迭代序列对象
+
+    @@@ python execute
+    hair = ["black", "brown", "blonde", "red"]
+    for col in hair:
+        print(col)
+
+## `enumerate`
+通过对一个序列类型使用内置函数 `enumerate()`, 可返回一个 `enumerate` 对象, 通过迭代 `enumerate` 对象, 可以直接获取迭代序列的索引和元素.
+
+    @@@ python
+    l = [1, 2, 3, 4]
+    for idx, item in enumerate(l):
+        print('{} -> {}'.format(idx, item))
+
+.callout.warning 不要再迭代序列的同时尝试删除其中的元素.
+
+# `range()`
+
+`range()` 函数返回一个列表(Python2) 或是一个 迭代器(Python3)
+
+在 Python2 中我们也可以使用 `xrange()` 返回一个迭代器
+
+格式:
+
+`range([start], stop[, step])`
+
+示例:
+
+    @@@ python
+    for i in range(5):
+        print(i)
+
+.callout.waning Python3 中移除了 `xrang()`, 而 `rang()` 被修改成了返回一个可迭代对象, 而在不是一个元组了.
+
 <!SLIDE transition=turnUp>
 # 列表推导式
 
@@ -136,9 +167,9 @@ L1 与 L2 引用同一个列表对象, 通过任何一个变量对这个列表�
 - `[expression for item in iterable]`
 - `[expression for item in iterable if condition]`
 
-<!SLIDE transition=turnUp>
-# range()
+示例:
 
-Python2 提供了更
+    @@@ python
+    temp = [i for i in range(100)]
 
-.callout.info Python3 中移除了 `xrang()`, 而 `rang()` 被修改成了返回一个可迭代对象, 而在不是一个元组了.
+    temp = [i for i in range(100) if i % 2 == 0]
