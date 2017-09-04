@@ -1,4 +1,4 @@
-<!SLIDE transition=turnUp>
+<!SLIDE>
 # Python2中的类
 
 在 Python2 中, 有两种形式的类存在:

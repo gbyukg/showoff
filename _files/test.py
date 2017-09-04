@@ -1,10 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-class A(object):
-    __slots__ = ('name', 'age', 'tag')
+x = 'global x'
 
-a = A()
-a.name = 'test'
-a.age = 24
-a.tag = 'IOS'
+def test():
+    y = 'local y'
+    print(locals())
+    print(globals()['x'])
+    globals()['name'] = 'zzl'
+
+test()
+print(name)
+
+# 访问局部变量, 报错
+#  print(y)

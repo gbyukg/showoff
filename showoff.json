@@ -51,14 +51,12 @@
     },
     {
       "section": [
-        "异常/01_exception.md"
-      ]
-    },
-    {
-      "section": [
         "函数/00_function.md",
         "函数/01_global_func.md",
-        "函数/02_lambda.md"
+        "函数/02_lambda.md",
+        "函数/03_closures.md",
+        "函数/04_decorator.md",
+        "函数/05_variable_scope.md"
       ]
     },
     {
@@ -72,6 +70,11 @@
         "面向对象/06_property_decorator.md",
         "面向对象/07_iterator.md",
         "面向对象/08_newstyle_class.md"
+      ]
+    },
+    {
+      "section": [
+        "异常/01_exception.md"
       ]
     },
     {
