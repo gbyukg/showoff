@@ -68,6 +68,7 @@
     first, last = ('Jims', 'Smith')
     first
     last
+    # 使用这种方式时, 左右必须一一对应
 
     # 在Python3中的新增加了一项功能, 可以使用 `*` 来代替剩余元素.
     tup_str = ('str1', 'str2', 'str3', 'str4')
@@ -89,6 +90,8 @@
     dir()
     dir(Sale)
     help(Sale)
+    # namedtuple 实际上就是一个类工厂函数
+    # 通过我们传递的参数创建新类
 
     # 创建命名元组实例
     s1 = Sale(432, 921, "2017-01-01", 3, 7.99)

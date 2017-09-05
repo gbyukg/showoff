@@ -40,8 +40,7 @@
       "section": [
         "集合类型/00_tuple.md",
         "集合类型/01_list.md",
-        "集合类型/03_dictionary.md",
-        "集合类型/04_iterator.md"
+        "集合类型/03_dictionary.md"
       ]
     },
     {

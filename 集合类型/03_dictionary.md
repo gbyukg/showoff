@@ -16,13 +16,22 @@
 
     d3 = dict(d2)
 
+    d4 = dict([['id', 1948], ('name', 'Washer'), ('size', 3)])
+
+    d5 = {"root": 17, 'blue': [75, 'R', 2], 21:'venus', -14:None, 'mars':'rover', (4,11):18, 0:45}
+
+## `zip()`
+可将传递给他的可迭代对象参数按顺序依次解压, 将每个参数中相同位置的元组合并成一个元组, 最终返回一个可迭代的 `zip` 类, 通过 循环 或内置函数 `next` 依次读取这些元组.
+
+    @@@ python
+    z = zip(('id', 'name', 'size'), (1948, 'Washer', 3))
+    next(z)
+
+    for i in z:
+        print(z)
+
+    # 通过 zip 创建字典对象
     d4 = dict(zip(('id', 'name', 'size'), (1948, 'Washer', 3)))
-
-    d5 = dict([['id', 1948], ('name', 'Washer'), ('size', 3)])
-
-    d6 = {"root": 17, 'blue': [75, 'R', 2], 21:'venus', -14:None, 'mars':'rover', (4,11):18, 0:45}
-
-.callout.info `zip()`
 
 <!SLIDE transition=turnUp>
 # 字典中的方法
@@ -43,19 +52,14 @@ d.popitem()        | 从字典中删除随意一个键值对, 并返回被删除
 d.setdefault(k, v) | 如果字典中存在键 `k`, 则返回它在字典中对应的值, 如果不存在该键, 则向该字典中插入值为 `v` 的键 `k`, 并返回值 `v`
 d.update(a)        | 更新字典, 该方法接收三种形式的参数: 一个字典; 或是一个可迭代对象, 每次迭代返回的都是一个包含两个元素的对象分别作为 key 和 value; 或是向该函数传递关键字参数
 
-
-.callout.info 在 Python2 中, `items()`, `keys()` 与 `values()` 函数返回的结果都是从源字典中拷贝出来的, 如果被操作的字典包含大量元素, 这将会导致内存的大量浪费, 相应的, 我们可以使用 `iteritems()`, `iterkeys()` 和 `itervalues()`, 这些函数返回一个可迭代对象, 可以对这些可迭代对象进行 `for` 循环获取其中的内容, 在循环可迭代对象时, 之后当前被处理的元素才会被保存到内存当中, 当处理完成以后, 就会从内存当中删除.
-
-.callout.info 在 Python3 中, 对 `items()`, `keys()` 与 `values()` 这3个函数进行了重新处理, 他们全部返回 字典视图(directory view) 对象, 并且移除了 `iteritems()`, `iterkeys()` 和 `itervalues()` 这3个函数.
-
 <!SLIDE transition=turnUp>
 # 字典视图
 
-字典视图是一个只读的可迭代对象, 可用来保存字典中的键, 或值, 或键值对, 取决于我们调用的是 `d.keys()`, `d.values()` 还是 `d.items()` 中的哪个方法.
+字典视图是一个只读的可迭代对象, 可用来保存字典中的键, 或值, 或键值对
+
+我们可以通过调用调用 `d.keys()`, `d.values()` 还是 `d.items()` 来分别获取这些值.
 
 字典视图是动态的, 能够实时反映出字典的变化.
-
-.callout.info 在 Python2 中, `d.keys()`, `d.values()` 和 `d.items()` 方法返回的并不是字典视图对象, 相应的, 我们可以使用 `d.viewkeys()`, `d.viewvalues()` 和 `d.viewitems` 来代替. 但是在 Python3 中, 这3个函数已经被移除.
 
 字典视图还支持 `set` 类型的集合操作
 
@@ -63,6 +67,10 @@ d.update(a)        | 更新字典, 该方法接收三种形式的参数: 一个�
 - `v | x` 并集
 - `v - x` 差集
 - `v ^ x` 对称差集
+
+.callout.warning 在 Python2 中, `items()`, `keys()` 与 `values()` 函数返回的结果都是从源字典中拷贝出来的, 如果被操作的字典包含大量元素, 这将会导致内存的大量浪费, 相应的, 我们可以使用 `iteritems()`, `iterkeys()` 和 `itervalues()`, 这些函数返回一个可迭代对象, 可以对这些可迭代对象进行 `for` 循环获取其中的内容, 在循环可迭代对象时, 之后当前被处理的元素才会被保存到内存当中, 当处理完成以后, 就会从内存当中删除.
+
+.callout.warning 在 Python3 中, 对 `items()`, `keys()` 与 `values()` 这3个函数进行了重新处理, 他们全部返回 字典视图(directory view) 对象, 并且移除了 `iteritems()`, `iterkeys()` 和 `itervalues()` 这3个函数.
 
 <!SLIDE transition=turnUp>
 # 字典推导式

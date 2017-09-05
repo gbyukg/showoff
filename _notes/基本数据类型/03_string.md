@@ -1,7 +1,7 @@
 # 字符串类型
     @@@ python
     s1 = 'string'
-    s2 = 's2 = ' this \
+    s2 = 'this \
     is \
     one \
     line'
@@ -9,24 +9,38 @@
         Line2
     line3
 
+    s4 = ('this '
+    'is '
+    'one '
+    'line')
+
+    # 注意, 多个字符串相加效率慢
+    # 没相加一次, 都会生成一个新的对象
     's' + 'tr' + 'ing'
 
     '=' * 5
-    '''
 
 # 转义字符, 进度条实现
-windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Unix 系统, 使用一个字符 `\n` 即可
+    @@@ python
+    print('\a') # 铃音
+    print('abc\b1') # 回退
+    print('123\rabc') # 回车
+    print('123\nabc') # 换行
 
-`\r` 需要注意一下.
+最熟悉的可能就是 `\r` 和 `\n` 了, 因为 Linux 和 Windows 下用这两个字符表示换行符.  
+但是仔细看 \r 描述
 
     @@@ shell
     #!/usr/bin/env bash
 
     for i in {1..5}; do
+        # -n 进制输出换行符
         echo -en "${i}%\r"
         sleep 0.5
     done
     echo ''
+
+Python 实现:
 
     @@@ python
     #!/usr/bin/env python
@@ -52,21 +66,24 @@ windows 下使用 `\r\n` 换行, HTTP 头信息中也同样使用 `\r\n`, 类 Un
     s[15]
 
 # 切片
+字符串的切片操作可以让我们获取字符串中的某一段子字符串.
 
 步长为正, 起始位置要小于结束位置, 表示从左到右截取
 
     @@@ python
     s = 'he ate camel food'
-    s[0:2]    # he
+    s[0:2]    # he 步长默认为 1
     s[:2]     # he
     s[13:]    # food
+    s[::]     # he ate camel food
     s[-9:14]  # 'amel f'
     s[7:-5]   # camel
-    s[0:-5:3] # ha m o
-    s[::]     # he ate camel food
+    s[0:-5:3] # ha m
     s[::3]    # ha m d
 
-    # 步长为负, 起始位置大于结束位置, 表示从右向左截取, 注意, 截取的结构是反顺的.
+    # 步长为负, 起始位置大于结束位置
+    # 表示从右向左截取
+    # 注意, 截取的结构是反顺的.
     s[5:2:-1]  # eta
     s[-1:2:-2] # do ea t
     s[::-1]    # doof lemac eta eh 反转

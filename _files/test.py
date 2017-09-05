@@ -1,16 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-x = 'global x'
+def test(a, *args, **kvargs):
+    print('a is {}'.format(a))
+    for i in args:
+        print(i)
+    for key, val in kvargs.items():
+        print("{} -> {}".format(key, val))
 
-def test():
-    y = 'local y'
-    print(locals())
-    print(globals()['x'])
-    globals()['name'] = 'zzl'
-
-test()
-print(name)
-
-# 访问局部变量, 报错
-#  print(y)
+args = ('b', 'c')
+kvargs = {'val1': 'val1', 'val2': 'val2'}
+test('a', *args, **kvargs)
