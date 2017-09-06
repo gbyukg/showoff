@@ -37,3 +37,5 @@
 
     print(add_logger(3, 4))
     print(sub_logger(5, 2))
+
+.callout.warning Python3 为我们提供了 `nonlocal` 关键字, 在闭包函数中, 通过 `nonlocal` 关键字可以明确声明一个变量是外部函数的变量.

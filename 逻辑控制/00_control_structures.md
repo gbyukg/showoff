@@ -22,7 +22,7 @@
 
 最简单的判断语句:
 
-    @@@ python execute
+    @@@ python
     if True: pass
 
 .callout.info `pass` 表示什么也不做

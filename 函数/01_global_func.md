@@ -1,5 +1,6 @@
 <!SLIDE transition=turnUp>
 # 函数的定义
+Python 中定义函数非常简单, 只需要使用 def 关键字即可
 
 ## 语法
 
@@ -8,30 +9,25 @@
         '''function help document'''
         suite
 
-通过 Python 中的关键 `def` 来定义函数
-
-    @@@ python
-    def cal_sum(a, b, c):
-        return a + b + c
-
 一旦我们定义了一个函数后, 就可以在定义函数后的任何代码中调用该函数了, 格式为
 
     @@@ python
-    func_name(parameters)
+    functionName(parameters)
 
-.callout.warning 由于 Python 是解释性语言, 解释顺序由上至下, 因此一定要先定义函数之后, 之可以调用这个函数.
+.callout.warning 由于 Python 是解释性语言, 解释顺序由上至下, 因此在调用一个函数前一定要先定义好这个函数.
+
+## 函数帮助文档
+
+在定义函数时, 可以使用 `'''` 为函数定义帮助文档信息.通过 `functionName.__doc__` 可以获取帮助文档信息.
 
 <!SLIDE transition=turnUp>
 # 函数的返回值
 
 当定义一个函数时, 我们无需声明函数返回值的类型,
 
-在 Python 中, 所有的函数都有且只有一个返回值, `return` 关键字用来终止函数的执行, 并将提供给 return 的参数(任意类型)返回给函数的调用者. 如果 `return` 后面没有提供任何参数, 或执行到函数体结尾, 没有通过 `return` 关键字返回, 函数也将同样返回 `None`.  
-`None` 与其他编程语言中的 `null` 类似, 表示什么都没有.
+在 Python 中, 所有的函数都有且只有一个返回值, `return` 关键字用来终止函数的执行, 并将 return 后的表达式结果(任意类型)作为函数的返回值返回给函数的调用者. 如果 `return` 后面没有提供任何参数, 或执行到函数体结尾时自动退出函数, 函数也将同样返回 `None`.  
 
-## 函数帮助文档
-
-在定义函数时, 可以使用 `'''` 为函数定义帮助文档信息.通过 `functionName.__doc__` 获取帮助文档信息.
+.callout.info Python 中的 `None` 与其他编程语言中的 `null` 类似, 表示什么都没有.
 
 <!SLIDE transition=turnUp>
 # 函数的参数

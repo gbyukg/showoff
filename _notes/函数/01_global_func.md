@@ -5,35 +5,42 @@
     # 使用 def 关键字, 并且无需指定函数的返回类型
     # 注意 冒号 和 缩进
     def test():
+        # 可以使用 pass 表示这个函数什么都不做
+        pass
+        # 这里我们输出一个字符串
         print('hello')
 
     # 当定义好函数后, 就可以使用函数名后跟一个括号的方式调用这个函数了
     test()
 
+还可以使用 `'''test function'''` 为函数添加文档. `test.__doc__` 获取帮助文档信息.
+
 # 函数返回值
-在 Python 中, 所有的函数都有且只有一个返回值, return 关键字用来终止函数的执行, 并将提供给 return 的参数(任意类型)返回给函数的调用者. 如果 return 后面没有提供任何参数, 或执行到函数体结尾, 没有通过 return 关键字返回, 函数也将同样返回 None.
-None 与其他编程语言中的 null 类似, 表示什么都没有.
+虽然定义参数时没有指定函数的返回值类型, 但是 Python 中所有的函数都有且只有一个返回值
 
     @@@ python
-    def test():
-        print('hello')
+    # 我们可以将函数的返回值赋值给一个变量
+    result = test()
+    # 默认是 None
+    # None 相当于其他语言中的 null, 表示什么都没有
+    print(result)
 
-        # 指定一个返回值
-        return True
-        # 虽然只能返回一个值
-        # 但是可以返回任意类型的值
-        # 返回一个元素
-        return 1, 2, 3
+可以使用 `return` 关键字来明确指定一个返回值, return 后可以跟着一个表达式, 当函数执行到 return 语句后, 会立即终止函数的执行, 并把这个表达式的结果作为函数的返回值返回给函数的调用者.
 
-    a = test()
+    @@@ python
+    return True
 
-    # 返回一个元组
-    a, b, c = test()
-    print(a)
-    print(b)
-    print(c)
+    # 函数只能返回一个值
+    # 但是值的类型是任意的
+    # 可以是元组, 列表, 字典等
+    return 1, 2, 3
+    # 实际上这样就相当于我们返回了多个值
+
+    # 将返回结果赋值给多个变量
+    a, b, c = resutl()
 
 # 带参数的函数
+
     @@@ python
     # 在定义函数时还可以指定接收的参数
     # 这样在调用函数时, 就可以向它传递自定义参数了
@@ -65,6 +72,7 @@ None 与其他编程语言中的 null 类似, 表示什么都没有.
     # def cal_sum(a=5, b, c) 将会提示错
 
 # 可变类型作为参数
+
     @@@ python
     #!/usr/bin/env python
     # -*- coding: utf-8 -*-
@@ -86,6 +94,7 @@ None 与其他编程语言中的 null 类似, 表示什么都没有.
     # 把 2 修改成 3, 结果也正常
 
 同时调用多次
+
     @@@ python
     print(append_if_event(2))
     print(append_if_event(3))
@@ -115,6 +124,7 @@ None 与其他编程语言中的 null 类似, 表示什么都没有.
     # 所以不可变类型作为参数的默认值不会有任何问题.
 
 ## 解决
+
     @@@ python
     # 不要将可变参数作为默认值
     # 而是在函数内每次都创建一个新的列表
@@ -140,6 +150,7 @@ None 与其他编程语言中的 null 类似, 表示什么都没有.
     test('a', 'b', 'c')
 
 ## 带其它参数
+
     @@@ python
     # 参数列表中还可以指定一个或多个必要参数
     def test(a, *args):
@@ -167,25 +178,10 @@ None 与其他编程语言中的 null 类似, 表示什么都没有.
     test('a', 'b', 'c', val1='val1', val2='val2')
 
 ## 将参数保存到元组和字典中
+
     @@@ python
     # 我们还可以直接传递一个元组和字典作为参数给函数
     args = ('b', 'c')
     kvargs = {'val1': 'val1', 'val2': 'val2'}
     # 传递的时候同样需要使用*和**解压元组的字典
     test('a', *args, **kvargs)
-
----
-
-    @@@ python
-    def product(a, b=1, *args, **kargs):
-    print('a: {}'.format(a))
-    print('b: {}'.format(b))
-
-    for arg in args:
-        print(arg)
-    for key,val in kargs.items():
-        print('{}: {}'.format(key, val))
-
-    param1 = ('a', 'b', 'c')
-    param2 = {'m': 'm', 'n': 'n'}
-    product(1, 2, *param1, **param2)

@@ -65,8 +65,8 @@
         "面向对象/02_clsmethod.md",
         "面向对象/03_staticmethod.md",
         "面向对象/04_inheritance.md",
-        "面向对象/05_magic_functions.md",
-        "面向对象/06_property_decorator.md",
+        "面向对象/05_property_decorator.md",
+        "面向对象/06_magic_functions.md",
         "面向对象/07_iterator.md",
         "面向对象/08_newstyle_class.md"
       ]

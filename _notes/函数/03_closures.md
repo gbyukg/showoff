@@ -114,3 +114,21 @@
 
     say_hi('zhang san')
     say_hello('li si')
+
+## nonlocal
+
+    @@@ python
+    def outer_func():
+        message = 'Hi'
+
+        def inner_func():
+            nonlocal message
+            message = 'Hello'
+            print(message)
+
+        result = inner_func()
+        print(message)
+        return result
+
+    outer_func()
+    # 输出结果全部是 hello

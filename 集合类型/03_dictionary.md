@@ -96,6 +96,8 @@ Default Dictionaries 与 普通的字典完全一样, 唯一的不同是在当�
 Default Dictionaries 存在于 `collections` 包中, 默认不会被 Python 解释器引入, 因此在使用 Default Dictionaries 之前需要引入该包: `import collections`
 
     @@@ python
+    import collections
+
     words = collections.defaultdict(int)
     print(words['a'])
 

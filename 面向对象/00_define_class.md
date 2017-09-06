@@ -11,7 +11,7 @@
         '''class document'''
         suite
 
-创建类时可以指定一个或多个要继承的父类 `base_classes`. 而 `object` 类是所有类的总父类, 也就是说, Python 中的所有类都继承自 `object` 类
+创建类时可以指定一个或多个要继承的父类 `base_classes`. 而 `object` 类是所有类的总父类, 也就是说, Python 中的所有类都继承自 `object` 类.
 
 在创建一个类时, 我们还可以为该类创建说明文档, 通过三引号来创建类文档
 
