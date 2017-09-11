@@ -22,6 +22,11 @@
     pyenv virtualenv 3.6.2 proj1
     pyenv virtualenv 3.7.13 proj2
 
+    # 默认行为, 不安装系统现有的 package 到当前项目中
+    virtualenv env --no-site-packages
+    # 安装现有 package 到当前项目中
+    virtualenv env --system-site-packages
+
     pyenv virtualenvs
 
     pyenv uninstall proj1

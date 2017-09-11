@@ -108,6 +108,14 @@ Python 实现:
     ' str   '.strip() # 去除两边的空格
 
 # format
+format 是 Python 2.6 引入的, 如果看一些老代码, 或者比较旧的教程, 会看到使用 `%` 来替代 `format` 关键字.
+
+    @@@ python
+    f = 'The input is {}'.format
+    f(1)
+
+    tu = (12,45,22222,103,6)
+    print '{0} {2} {1} {2} {3} {2} {4} {2}'.format(*tu)
 
 基本用法
 

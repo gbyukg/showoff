@@ -25,6 +25,12 @@
     @@@ bash
     virtualenv proj2 --python /root/.pyenv/versions/2.7.13/bin/python
 
+## 不安装系统现有的包
+默认行为
+
+    @@@ bash
+    virtualenv proj3 --no-site-packages
+
 ## 激活环境
 
     @@@ bash
